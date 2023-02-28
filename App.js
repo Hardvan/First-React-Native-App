@@ -32,6 +32,8 @@ import {
   TouchableOpacity,
   TouchableHighlight,
   TouchableNativeFeedback,
+  Button,
+  Alert,
 } from "react-native";
 
 export default function App() {
@@ -41,22 +43,16 @@ export default function App() {
     <SafeAreaView style={styles.container} noOfLines={1} onPress={handlePress}>
       {/* Status bar is the bar at the top of the screen */}
       <StatusBar style="auto" />
-
-      <Text numberOfLines={1}>
-        Hello, World! This is React Native. This is a very long text. This is a
-        very long text.
-      </Text>
-      <TouchableHighlight onPress={() => console.log("Image pressed.")}>
-        {/* Image from the web */}
-        <Image
-          source={{
-            uri: "https://picsum.photos/200/300",
-            width: 200,
-            height: 300,
-          }}
-          fadeDuration={1000}
-        />
-      </TouchableHighlight>
+      <Button
+        title="Click Me"
+        color={"green"}
+        onPress={() =>
+          Alert.alert("My title", "My message", [
+            { text: "Yes", onPress: () => console.log("Yes") },
+            { text: "No", onPress: () => console.log("No") },
+          ])
+        }
+      />
     </SafeAreaView>
   );
 }
