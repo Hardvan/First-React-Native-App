@@ -18,6 +18,8 @@
 
   ? Project Link:
   https://expo.dev/@hardvan/DoneWithIt?serviceType=classic&distribution=expo-go
+
+  ? Re-run in terminal if it says file not found:
 */
 
 import React from "react";
