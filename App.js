@@ -34,6 +34,7 @@ import {
   TouchableNativeFeedback,
   Button,
   Alert,
+  Platform,
 } from "react-native";
 
 export default function App() {
@@ -46,12 +47,7 @@ export default function App() {
       <Button
         title="Click Me"
         color={"green"}
-        onPress={() =>
-          Alert.alert("My title", "My message", [
-            { text: "Yes", onPress: () => console.log("Yes") },
-            { text: "No", onPress: () => console.log("No") },
-          ])
-        }
+        onPress={() => console.log("Button pressed")}
       />
     </SafeAreaView>
   );
@@ -61,7 +57,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    paddingTop: Platform.OS === "android" ? 32 : 0,
   },
 });
