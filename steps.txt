@@ -1,0 +1,2 @@
+1) Run the command
+npm i -g expo-cli
