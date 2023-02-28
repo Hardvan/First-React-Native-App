@@ -22,41 +22,9 @@
 
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Image,
-  TouchableWithoutFeedback,
-  TouchableOpacity,
-  TouchableHighlight,
-  TouchableNativeFeedback,
-  Button,
-  Alert,
-  Platform,
-} from "react-native";
+import { View } from "react-native";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
 
 export default function App() {
-  const handlePress = () => console.log("Text pressed");
-
-  return (
-    <SafeAreaView style={styles.container} noOfLines={1} onPress={handlePress}>
-      {/* Status bar is the bar at the top of the screen */}
-      <StatusBar style="auto" />
-      <Button
-        title="Click Me"
-        color={"green"}
-        onPress={() => console.log("Button pressed")}
-      />
-    </SafeAreaView>
-  );
+  return <WelcomeScreen />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: Platform.OS === "android" ? 32 : 0,
-  },
-});
