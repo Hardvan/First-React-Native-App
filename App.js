@@ -22,16 +22,32 @@
 
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
 
 export default function App() {
-  console.log("Console log message, this is.");
+  const handlePress = () => console.log("Text pressed");
 
   return (
-    <View style={styles.container}>
-      <Text>Hello, World! This is React Native.</Text>
+    <SafeAreaView style={styles.container} noOfLines={1} onPress={handlePress}>
+      {/* Status bar is the bar at the top of the screen */}
       <StatusBar style="auto" />
-    </View>
+
+      <Text>Hello, World! This is React Native. This is a very ling text.</Text>
+      {/* Static Image */}
+      <Image
+        source={require("./assets/icon.png")}
+        style={{ width: 200, height: 200 }}
+      />
+      {/* Image from the web */}
+      <Image
+        source={{
+          uri: "https://picsum.photos/200/300",
+          width: 200,
+          height: 300,
+        }}
+        fadeDuration={1000}
+      />
+    </SafeAreaView>
   );
 }
 
