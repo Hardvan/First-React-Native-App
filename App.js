@@ -22,7 +22,17 @@
 
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Image,
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+  TouchableHighlight,
+  TouchableNativeFeedback,
+} from "react-native";
 
 export default function App() {
   const handlePress = () => console.log("Text pressed");
@@ -32,21 +42,21 @@ export default function App() {
       {/* Status bar is the bar at the top of the screen */}
       <StatusBar style="auto" />
 
-      <Text>Hello, World! This is React Native. This is a very ling text.</Text>
-      {/* Static Image */}
-      <Image
-        source={require("./assets/icon.png")}
-        style={{ width: 200, height: 200 }}
-      />
-      {/* Image from the web */}
-      <Image
-        source={{
-          uri: "https://picsum.photos/200/300",
-          width: 200,
-          height: 300,
-        }}
-        fadeDuration={1000}
-      />
+      <Text numberOfLines={1}>
+        Hello, World! This is React Native. This is a very long text. This is a
+        very long text.
+      </Text>
+      <TouchableHighlight onPress={() => console.log("Image pressed.")}>
+        {/* Image from the web */}
+        <Image
+          source={{
+            uri: "https://picsum.photos/200/300",
+            width: 200,
+            height: 300,
+          }}
+          fadeDuration={1000}
+        />
+      </TouchableHighlight>
     </SafeAreaView>
   );
 }
