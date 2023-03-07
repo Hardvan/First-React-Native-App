@@ -1,2 +1,2 @@
-1) Run the command
+1) Run the command to install expo-cli globally
 npm i -g expo-cli
