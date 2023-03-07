@@ -1,6 +1,6 @@
 /*
   ? To initialize:
-  1) expo init DoneWithIt
+  1) npx create-expo-app --DoneWithIt
 
   ? To run:
   1) cd DoneWithIt
