@@ -1,4 +1,7 @@
 /*
+  ? To initialize:
+  1) expo init DoneWithIt
+
   ? To run:
   1) cd DoneWithIt
   2) npx expo start
